@@ -8,7 +8,12 @@ local width = tonumber(read())
 print("Enter the depth of the mining area:")
 local depth = tonumber(read())
 
--- Function to mine the full 3D area
-function mineVolume(length, width, depth)
-    
+-- Function to dig a 1-block high tunnel
+function digLine(length)
+    for i = 1, length do
+        if turtle.detect() then
+            turtle.dig() -- Front digging
+        end
+        turtle.forward() -- Move forward
+    end
 end
